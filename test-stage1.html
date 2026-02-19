@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1 Display Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="medical-container">
+        <header class="medical-header">
+            <div class="header-content">
+                <h1>Stage 1 Display Test</h1>
+            </div>
+        </header>
+
+        <main class="medical-main">
+            <div style="margin-bottom: 20px;">
+                <button onclick="testSuccess()" class="btn-primary">Test Stage 1 Success</button>
+                <button onclick="testFailure()" class="btn-secondary" style="margin-left: 10px;">Test Stage 1 Failure</button>
+            </div>
+
+            <div id="diagnostic-results" class="results-panel" style="display: none;">
+                <div id="results-content"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function testSuccess() {
+            const resultsPanel = document.getElementById('diagnostic-results');
+            const resultsContent = document.getElementById('results-content');
+
+            const result = {
+                valid: true,
+                caption: "a close up of a person's hand with a rash",
+                reason: "Biological content verified: hand, skin, finger"
+            };
+
+            resultsContent.innerHTML = `
+                <div class="medical-card" style="border-left: 4px solid var(--success);">
+                    <h4 style="color: var(--success);">
+                        <i class="fas fa-check-circle"></i> Stage 1: Image Validation - PASSED
+                    </h4>
+                    <p style="margin-top: 12px;">Medical image verified successfully</p>
+                    
+                    <div style="margin-top: 20px; padding: 16px; background: rgba(0, 198, 255, 0.08); border-radius: 8px; border: 1px solid rgba(0, 198, 255, 0.2);">
+                        <h5 style="color: var(--accent-primary); font-size: 13px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+                            <i class="fas fa-brain"></i> BLIP Image Caption
+                        </h5>
+                        <p style="color: var(--text-primary); font-size: 14px; font-style: italic;">
+                            "${result.caption || 'N/A'}"
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 20px; padding: 16px; background: rgba(46, 204, 113, 0.08); border-radius: 8px; border: 1px solid rgba(46, 204, 113, 0.2);">
+                        <h5 style="color: var(--success); font-size: 13px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+                            <i class="fas fa-check-circle"></i> Validation Reason
+                        </h5>
+                        <p style="color: var(--text-secondary); font-size: 13px;">
+                            ${result.reason || 'Biological content detected'}
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <button onclick="alert('Proceeding to Stage 2...')" class="btn-analyze">
+                            <i class="fas fa-arrow-right"></i> Proceed to Stage 2 - Disease Detection
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            resultsPanel.style.display = 'block';
+            resultsPanel.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function testFailure() {
+            const resultsPanel = document.getElementById('diagnostic-results');
+            const resultsContent = document.getElementById('results-content');
+
+            const result = {
+                valid: false,
+                caption: "a car parked on the side of the road",
+                reason: "Non-medical content detected: car, vehicle, road",
+                message: "Invalid image. Please upload a clear medical image of a human body part."
+            };
+
+            resultsContent.innerHTML = `
+                <div class="medical-card" style="border-left: 4px solid var(--error);">
+                    <h4 style="color: var(--error);">
+                        <i class="fas fa-times-circle"></i> Stage 1: Image Validation - FAILED
+                    </h4>
+                    <p style="margin-top: 12px;">${result.message}</p>
+                    
+                    <div style="margin-top: 20px; padding: 16px; background: rgba(0, 198, 255, 0.08); border-radius: 8px; border: 1px solid rgba(0, 198, 255, 0.2);">
+                        <h5 style="color: var(--accent-primary); font-size: 13px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+                            <i class="fas fa-brain"></i> BLIP Image Caption
+                        </h5>
+                        <p style="color: var(--text-primary); font-size: 14px; font-style: italic;">
+                            "${result.caption || 'N/A'}"
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 16px; padding: 16px; background: rgba(255, 77, 79, 0.08); border-radius: 8px; border: 1px solid rgba(255, 77, 79, 0.2);">
+                        <h5 style="color: var(--error); font-size: 13px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+                            <i class="fas fa-exclamation-circle"></i> Rejection Reason
+                        </h5>
+                        <p style="color: var(--text-secondary); font-size: 13px;">
+                            ${result.reason || 'Image does not contain biological/medical content'}
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <button onclick="alert('Admin override - Proceeding to Stage 2...')" class="btn-secondary" style="width: 100%;">
+                            <i class="fas fa-user-shield"></i> Admin Override - Proceed to Stage 2
+                        </button>
+                    </div>
+
+                    <p style="margin-top: 16px; padding: 16px; background: rgba(255, 77, 79, 0.08); border-radius: 6px; border-left: 3px solid var(--error);">
+                        <i class="fas fa-info-circle"></i> Recommended: Upload a clear medical image of a human body part, or use admin override to proceed anyway.
+                    </p>
+                </div>
+            `;
+
+            resultsPanel.style.display = 'block';
+            resultsPanel.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VitaminAI - Medical Diagnostic Platform">
+    <title>VitaminAI - Medical Diagnostic Platform</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2300C6FF'/><text x='50' y='70' font-size='32' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial'>VAI</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="medical-container">
+        <!-- Header -->
+        <header class="medical-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-microscope"></i>
+                    <div>
+                        <h1>VitaminAI</h1>
+                        <span class="subtitle">Medical Diagnostic Platform</span>
+                    </div>
+                </div>
+                <div class="header-info">
+                    <div class="system-status-enhanced">
+                        <div class="status-pulse"></div>
+                        <i class="fas fa-circle status-indicator" id="status-indicator"></i>
+                        <div class="status-text">
+                            <span class="status-label" id="system-status">System Online</span>
+                            <span class="status-sublabel" id="system-sublabel">All services operational</span>
+                        </div>
+                    </div>
+                    <a href="index.html" class="btn-secondary btn-icon-only" style="text-decoration: none; padding: 10px;" title="Home">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <a href="patient.html" class="btn-secondary btn-icon-only" style="text-decoration: none; padding: 10px;" title="Patient Login">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="timestamp" id="current-time"></div>
+                </div>
+            </div>
+            <div class="medical-disclaimer">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>MEDICAL DISCLAIMER:</strong> This system is for educational purposes only. Not intended for clinical diagnosis.
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="medical-nav">
+            <button class="nav-btn active" data-tab="diagnostic">
+                <i class="fas fa-stethoscope"></i>
+                <span>Diagnostic Center</span>
+            </button>
+            <button class="nav-btn" data-tab="patients">
+                <i class="fas fa-users"></i>
+                <span>Patient Management</span>
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="medical-main">
+            <!-- Diagnostic Center -->
+            <section id="diagnostic-tab" class="tab-panel active">
+                <div class="panel-header">
+                    <h2>
+                        <i class="fas fa-microscope"></i>
+                        Stage 1: Medical Image Validation
+                    </h2>
+                    <div class="panel-actions">
+                        <button class="btn-secondary" onclick="resetDiagnostic()">
+                            <i class="fas fa-redo"></i>
+                            <span>Reset</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="diagnostic-workflow">
+                    <!-- Step 1: Patient Information -->
+                    <div class="workflow-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Patient Information</h3>
+                        </div>
+                        <form id="patient-form" class="medical-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="patient-select">
+                                        <i class="fas fa-user-circle"></i>
+                                        Select Patient *
+                                    </label>
+                                    <select id="patient-select" class="form-select" required>
+                                        <option value="">-- Select a patient --</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="diagnosis-date">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Date of Diagnosis *
+                                    </label>
+                                    <input type="date" id="diagnosis-date" required>
+                                </div>
+                            </div>
+                            <div id="patient-details" class="patient-details" style="display: none;">
+                                <h4><i class="fas fa-info-circle"></i> Patient Details</h4>
+                                <div class="detail-grid">
+                                    <div class="detail-item">
+                                        <strong>Patient ID:</strong>
+                                        <span id="detail-id">-</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <strong>Name:</strong>
+                                        <span id="detail-name">-</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <strong>Phone:</strong>
+                                        <span id="detail-phone">-</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <strong>Date of Birth:</strong>
+                                        <span id="detail-dob">-</span>
+                                    </div>
+                                    <div class="detail-item" style="grid-column: 1 / -1;">
+                                        <strong>Address:</strong>
+                                        <span id="detail-address">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-check"></i>
+                                Confirm Patient Selection
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Step 2: Medical Image Upload -->
+                    <div class="workflow-step">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Medical Image Upload</h3>
+                        </div>
+                        <div class="upload-section">
+                            <div class="upload-area" id="upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h4>Upload Medical Image</h4>
+                                <p>Drag & drop or click to select</p>
+                                <input type="file" id="medical-image" accept="image/*" hidden>
+                            </div>
+                            <div class="image-preview-container" id="image-preview-container" style="display: none;">
+                                <div class="image-preview" id="image-preview"></div>
+                                <div class="image-info" id="image-info"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Image Validation -->
+                    <div class="workflow-step">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>Image Validation</h3>
+                        </div>
+                        <div class="analysis-controls">
+                            <button id="analyze-btn" class="btn-analyze" disabled>
+                                <i class="fas fa-check-circle"></i>
+                                Validate Image (Stage 1)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div id="diagnostic-results" class="results-panel" style="display: none;">
+                    <div id="results-content"></div>
+                </div>
+            </section>
+
+            <!-- Patient Management -->
+            <section id="patients-tab" class="tab-panel">
+                <div class="panel-header">
+                    <h2>
+                        <i class="fas fa-users"></i>
+                        Patient Management
+                    </h2>
+                    <div class="panel-actions">
+                        <button class="btn-primary" onclick="medicalSystem.showAddPatientModal()">
+                            <i class="fas fa-plus"></i>
+                            <span>Add New Patient</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="patients-list">
+                    <table class="patients-table">
+                        <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Date of Birth</th>
+                                <th>Address</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patients-table-body">
+                            <tr>
+                                <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-tertiary);">
+                                    <i class="fas fa-users" style="font-size: 48px; opacity: 0.3; margin-bottom: 16px;"></i>
+                                    <p>No patients found. Click "Add New Patient" to get started.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Patient Modal -->
+    <div id="patient-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">
+                    <i class="fas fa-user-plus"></i>
+                    Add New Patient
+                </h3>
+                <button class="modal-close" onclick="medicalSystem.closePatientModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="patient-modal-form" class="medical-form">
+                <input type="hidden" id="modal-patient-id">
+                <div class="form-group">
+                    <label for="modal-patient-name">
+                        <i class="fas fa-user"></i>
+                        Full Name *
+                    </label>
+                    <input type="text" id="modal-patient-name" placeholder="Enter patient name" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modal-patient-phone">
+                            <i class="fas fa-phone"></i>
+                            Contact Number *
+                        </label>
+                        <input type="tel" id="modal-patient-phone" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-patient-dob">
+                            <i class="fas fa-calendar"></i>
+                            Date of Birth *
+                        </label>
+                        <input type="date" id="modal-patient-dob" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modal-patient-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Address *
+                    </label>
+                    <textarea id="modal-patient-address" placeholder="Enter patient address" required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="medicalSystem.closePatientModal()">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i>
+                        <span id="modal-submit-text">Save Patient</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="medical-spinner"></div>
+            <h3>Processing Medical Image</h3>
+            <p id="loading-message">Validating image...</p>
+        </div>
+    </div>
+
+    <!-- Alert System -->
+    <div id="alert-container" class="alert-container"></div>
+
+    <script src="script.js?v=3.4"></script>
+</body>
+</html>

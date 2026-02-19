@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaminAI - AI-Powered Vitamin Deficiency Detection Platform</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2300C6FF'/><text x='50' y='70' font-size='32' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial'>VAI</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="landing-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="landing-nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <i class="fas fa-microscope"></i>
+                <div class="nav-logo-text">
+                    <h2>VitaminAI</h2>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pipeline">Pipeline</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#dataset">Dataset</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="admin.html" class="btn-secondary" style="text-decoration: none; padding: 10px 20px;">
+                    <i class="fas fa-user-shield"></i> Admin
+                </a>
+                <a href="patient.html" class="btn-primary" style="text-decoration: none; padding: 10px 20px;">
+                    <i class="fas fa-user"></i> Patient
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-modern">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;">AI-Powered Vitamin Deficiency Detection</h1>
+                <p>
+                    Revolutionary medical image analysis platform leveraging artificial intelligence 
+                    to identify potential vitamin deficiencies through visible medical conditions. 
+                    Empowering healthcare professionals with evidence-based insights.
+                </p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="admin.html" class="btn-primary" style="padding: 16px 40px; text-decoration: none; background: white; color: var(--bg-primary); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);">
+                        <i class="fas fa-rocket"></i> Get Started
+                    </a>
+                    <a href="#pipeline" class="btn-secondary" style="padding: 16px 40px; text-decoration: none;">
+                        <i class="fas fa-play-circle"></i> Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Accuracy Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Conditions Detected</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Vitamin Types</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card" style="padding: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="color: var(--text-primary); font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                            <i class="fas fa-heartbeat" style="color: var(--accent-primary); margin-right: 8px;"></i>
+                            Live System Monitor
+                        </h3>
+                        <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--success);">
+                            <span style="width: 8px; height: 8px; background: var(--success); border-radius: 50%; animation: pulse 2s infinite;"></span>
+                            ACTIVE
+                        </span>
+                    </div>
+                    <div style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                            <span style="color: var(--text-secondary); font-size: 13px;">Detection Accuracy</span>
+                            <span style="color: var(--accent-primary); font-size: 13px; font-weight: 600;" id="accuracy">95%</span>
+                        </div>
+                        <div style="background: var(--bg-tertiary); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 95%; height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--success)); animation: pulse-bar 2s ease-in-out infinite;"></div>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div style="background: rgba(0, 198, 255, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(0, 198, 255, 0.3);">
+                            <div style="color: var(--text-tertiary); font-size: 11px; margin-bottom: 5px;">Patients Analyzed</div>
+                            <div style="color: var(--text-primary); font-size: 24px; font-weight: 700;" id="patients">1,247</div>
+                        </div>
+                        <div style="background: rgba(46, 204, 113, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(46, 204, 113, 0.3);">
+                            <div style="color: var(--text-tertiary); font-size: 11px; margin-bottom: 5px;">Active Sessions</div>
+                            <div style="color: var(--text-primary); font-size: 24px; font-weight: 700;" id="sessions">12</div>
+                        </div>
+                    </div>
+                    <div style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 15px;">
+                        <div style="color: var(--text-secondary); font-size: 12px; margin-bottom: 10px;">Recent Detections</div>
+                        <div id="recentDetections" style="font-size: 11px; color: var(--text-tertiary); line-height: 1.8;">
+                            <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span><i class="fas fa-check-circle" style="color: var(--success); margin-right: 6px;"></i>Vitamin D Deficiency</span>
+                                <span style="color: var(--text-tertiary);">2m ago</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span><i class="fas fa-check-circle" style="color: var(--success); margin-right: 6px;"></i>Iron Deficiency</span>
+                                <span style="color: var(--text-tertiary);">5m ago</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 5px 0;">
+                                <span><i class="fas fa-check-circle" style="color: var(--success); margin-right: 6px;"></i>Vitamin B12 Deficiency</span>
+                                <span style="color: var(--text-tertiary);">8m ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pipeline Section -->
+    <section id="pipeline" class="pipeline-section">
+        <div style="text-align: center;">
+            <h2 class="section-title">Three-Stage Analysis Pipeline</h2>
+            <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 60px; font-size: 16px;">
+                Our sophisticated pipeline ensures accurate and reliable vitamin deficiency detection through a systematic approach
+            </p>
+        </div>
+        <div class="pipeline-flow">
+            <div class="pipeline-step">
+                <i class="fas fa-shield-alt" style="font-size: 72px; color: var(--accent-primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--text-primary); font-size: 20px; margin-bottom: 12px;">Image Validation</h3>
+                <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                    Validates medical relevance of uploaded images using CNN-based classification
+                </p>
+            </div>
+            <i class="fas fa-arrow-right pipeline-arrow"></i>
+            <div class="pipeline-step">
+                <i class="fas fa-brain" style="font-size: 72px; color: var(--accent-primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--text-primary); font-size: 20px; margin-bottom: 12px;">Disease Detection</h3>
+                <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                    AI identifies visible medical conditions with confidence scoring
+                </p>
+            </div>
+            <i class="fas fa-arrow-right pipeline-arrow"></i>
+            <div class="pipeline-step">
+                <i class="fas fa-pills" style="font-size: 72px; color: var(--accent-primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--text-primary); font-size: 20px; margin-bottom: 12px;">Vitamin Inference</h3>
+                <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                    Rule-based engine maps conditions to vitamin deficiencies
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" style="padding: 120px 40px; background: var(--bg-primary); position: relative; overflow: hidden;">
+        <div style="position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0, 198, 255, 0.08) 0%, transparent 70%); top: -300px; left: -200px;"></div>
+        <div style="text-align: center;">
+            <h2 class="section-title">Powerful Features for Modern Healthcare</h2>
+            <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 60px; font-size: 16px;">
+                Everything you need for comprehensive vitamin deficiency analysis and patient management
+            </p>
+        </div>
+        <div style="max-width: 1300px; margin: 0 auto; position: relative;">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 30px;">
+                <div style="background: linear-gradient(135deg, rgba(0, 198, 255, 0.1) 0%, rgba(0, 198, 255, 0.05) 100%); padding: 50px 40px; border-radius: 16px; border: 1px solid rgba(0, 198, 255, 0.3); display: flex; align-items: center; gap: 30px;">
+                    <div style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); width: 80px; height: 80px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-chart-line" style="font-size: 40px; color: var(--bg-primary);"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--text-primary); font-size: 24px; margin-bottom: 12px; font-weight: 700;">Analytics Dashboard</h3>
+                        <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">
+                            Interactive charts for vitamin trends, disease patterns, and monthly diagnosis tracking
+                        </p>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(46, 204, 113, 0.05) 100%); padding: 50px 40px; border-radius: 16px; border: 1px solid rgba(46, 204, 113, 0.3); display: flex; align-items: center; gap: 30px;">
+                    <div style="background: linear-gradient(135deg, var(--success), #27AE60); width: 80px; height: 80px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-database" style="font-size: 40px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--text-primary); font-size: 24px; margin-bottom: 12px; font-weight: 700;">Patient Management</h3>
+                        <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">
+                            Complete patient records with secure storage and comprehensive health analytics
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div style="background: var(--bg-secondary); padding: 40px 30px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition);">
+                    <div style="background: rgba(0, 198, 255, 0.1); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-apple-alt" style="font-size: 32px; color: var(--accent-primary);"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); font-size: 18px; margin-bottom: 12px; font-weight: 600;">Nutrition Guidance</h3>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                        Evidence-based recommendations with food sources
+                    </p>
+                </div>
+                <div style="background: var(--bg-secondary); padding: 40px 30px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
+                    <div style="background: rgba(0, 198, 255, 0.1); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-lock" style="font-size: 32px; color: var(--accent-primary);"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); font-size: 18px; margin-bottom: 12px; font-weight: 600;">Secure & Private</h3>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                        Local processing with encrypted data storage
+                    </p>
+                </div>
+                <div style="background: var(--bg-secondary); padding: 40px 30px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
+                    <div style="background: rgba(0, 198, 255, 0.1); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-docker" style="font-size: 32px; color: var(--accent-primary);"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); font-size: 18px; margin-bottom: 12px; font-weight: 600;">Docker Ready</h3>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                        Containerized microservices architecture
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Section -->
+    <section id="dataset" class="dataset-section">
+        <div class="dataset-container">
+            <div style="text-align: center;">
+                <i class="fas fa-database dataset-icon"></i>
+                <h2 style="font-size: 36px; color: var(--text-primary); margin-bottom: 16px;">Training Dataset</h2>
+                <p style="font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px;">
+                    Access our curated medical image dataset used to train the AI models. 
+                    Perfect for research, education, and model development.
+                </p>
+            </div>
+            <div class="dataset-info">
+                <div class="info-item">
+                    <div class="info-label">Images</div>
+                    <div class="info-value">5,000+</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Conditions</div>
+                    <div class="info-value">50+</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Format</div>
+                    <div class="info-value">ZIP</div>
+                </div>
+            </div>
+            <a href="train.zip" download class="download-btn">
+                <i class="fas fa-download"></i>
+                Download Training Dataset
+            </a>
+            <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 20px;">
+                For educational and research purposes only
+            </p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="padding: 120px 40px; background: var(--bg-primary);">
+        <div style="text-align: center;">
+            <h2 class="section-title">Trusted by Healthcare Professionals</h2>
+            <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 60px; font-size: 16px;">
+                See what medical professionals and researchers are saying about VitaminAI
+            </p>
+        </div>
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+            <div style="background: var(--bg-secondary); padding: 40px; border-radius: 16px; border: 1px solid var(--border-color); position: relative;">
+                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 30px; font-style: italic;">
+                    "VitaminAI has transformed how we approach nutritional deficiency screening. 
+                    The three-stage pipeline ensures accuracy while the analytics dashboard provides 
+                    invaluable insights into patient trends."
+                </p>
+                <div style="display: flex; align-items: center; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                    <div style="width: 55px; height: 55px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--bg-primary); font-weight: 700; flex-shrink: 0;">
+                        MC
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-primary); font-size: 16px; margin-bottom: 4px; font-weight: 600;">Dr. Maria Chen</h4>
+                        <p style="color: var(--text-tertiary); font-size: 13px;">Clinical Nutritionist</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background: var(--bg-secondary); padding: 40px; border-radius: 16px; border: 1px solid var(--border-color); position: relative;">
+                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 30px; font-style: italic;">
+                    "As an educator, I find VitaminAI to be an excellent teaching tool. 
+                    The evidence-based approach and transparent methodology make it perfect 
+                    for demonstrating AI applications in healthcare."
+                </p>
+                <div style="display: flex; align-items: center; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                    <div style="width: 55px; height: 55px; border-radius: 50%; background: linear-gradient(135deg, var(--success), #27AE60); display: flex; align-items: center; justify-content: center; font-size: 22px; color: white; font-weight: 700; flex-shrink: 0;">
+                        JP
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-primary); font-size: 16px; margin-bottom: 4px; font-weight: 600;">Prof. James Patterson</h4>
+                        <p style="color: var(--text-tertiary); font-size: 13px;">Medical AI Researcher</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background: var(--bg-secondary); padding: 40px; border-radius: 16px; border: 1px solid var(--border-color); position: relative;">
+                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                    <i class="fas fa-star" style="color: #FFB800; font-size: 18px;"></i>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 30px; font-style: italic;">
+                    "The patient management system is intuitive and comprehensive. 
+                    Being able to track vitamin deficiency patterns over time has significantly 
+                    improved our preventive care strategies."
+                </p>
+                <div style="display: flex; align-items: center; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                    <div style="width: 55px; height: 55px; border-radius: 50%; background: linear-gradient(135deg, #9B59B6, #8E44AD); display: flex; align-items: center; justify-content: center; font-size: 22px; color: white; font-weight: 700; flex-shrink: 0;">
+                        SK
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-primary); font-size: 16px; margin-bottom: 4px; font-weight: 600;">Dr. Sarah Kim</h4>
+                        <p style="color: var(--text-tertiary); font-size: 13px;">Primary Care Physician</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-modern">
+        <div class="cta-box">
+            <h2 style="font-size: 40px; color: var(--text-primary); margin-bottom: 20px;">
+                Ready to Transform Healthcare?
+            </h2>
+            <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 40px;">
+                Join healthcare professionals using VitaminAI for educational vitamin deficiency analysis
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="admin.html" class="btn-primary" style="padding: 16px 40px; text-decoration: none; font-size: 16px;">
+                    <i class="fas fa-rocket"></i> Launch Admin Dashboard
+                </a>
+                <a href="patient.html" class="btn-secondary" style="padding: 16px 40px; text-decoration: none; font-size: 16px;">
+                    <i class="fas fa-user"></i> Patient Portal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-primary); padding: 60px 40px 40px; border-top: 1px solid var(--border-color);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <i class="fas fa-microscope" style="font-size: 28px; color: var(--accent-primary);"></i>
+                        <h3 style="font-size: 22px; color: var(--text-primary);">VitaminAI</h3>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                        AI-powered vitamin deficiency detection platform for educational and research purposes.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 16px; font-size: 16px;">Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><a href="#home" style="color: var(--text-secondary); text-decoration: none; font-size: 14px;">Home</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#pipeline" style="color: var(--text-secondary); text-decoration: none; font-size: 14px;">Pipeline</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#features" style="color: var(--text-secondary); text-decoration: none; font-size: 14px;">Features</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#dataset" style="color: var(--text-secondary); text-decoration: none; font-size: 14px;">Dataset</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 16px; font-size: 16px;">Access</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><a href="admin.html" style="color: var(--text-secondary); text-decoration: none; font-size: 14px;">Admin Dashboard</a></li>
+                        <li style="margin-bottom: 10px;"><a href="patient.html" style="color: var(--text-secondary); text-decoration: none; font-size: 14px;">Patient Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(255, 184, 0, 0.08); padding: 24px; border-radius: 8px; border: 1px solid rgba(255, 184, 0, 0.2); margin-bottom: 30px;">
+                <i class="fas fa-exclamation-triangle" style="color: var(--warning); margin-right: 8px;"></i>
+                <strong style="color: var(--warning);">MEDICAL DISCLAIMER:</strong>
+                <span style="color: var(--text-secondary); font-size: 13px;">
+                    This system is for educational purposes only. Not intended for clinical diagnosis. 
+                    Always consult healthcare professionals for medical advice.
+                </span>
+            </div>
+            <div style="text-align: center; padding-top: 30px; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-tertiary); font-size: 13px;">
+                    © <span id="currentYear"></span> Codeless Technologies. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Live Monitor Animation
+        const detections = [
+            'Vitamin D Deficiency', 'Iron Deficiency', 'Vitamin B12 Deficiency',
+            'Vitamin C Deficiency', 'Vitamin A Deficiency', 'Folate Deficiency',
+            'Vitamin K Deficiency', 'Biotin Deficiency'
+        ];
+        
+        function updateMonitor() {
+            // Update patients count
+            const patients = document.getElementById('patients');
+            if (patients) {
+                const current = parseInt(patients.textContent.replace(',', ''));
+                patients.textContent = (current + 1).toLocaleString();
+            }
+            
+            // Update sessions randomly
+            const sessions = document.getElementById('sessions');
+            if (sessions) {
+                sessions.textContent = Math.floor(Math.random() * 8) + 10;
+            }
+            
+            // Update accuracy slightly
+            const accuracy = document.getElementById('accuracy');
+            if (accuracy) {
+                const acc = 94 + Math.random() * 2;
+                accuracy.textContent = acc.toFixed(1) + '%';
+            }
+        }
+        
+        function updateDetections() {
+            const container = document.getElementById('recentDetections');
+            if (!container) return;
+            
+            const times = ['Just now', '2m ago', '5m ago'];
+            let html = '';
+            for (let i = 0; i < 3; i++) {
+                const detection = detections[Math.floor(Math.random() * detections.length)];
+                const border = i < 2 ? 'border-bottom: 1px solid rgba(255,255,255,0.05);' : '';
+                html += `
+                    <div style="display: flex; justify-content: space-between; padding: 5px 0; ${border}">
+                        <span><i class="fas fa-check-circle" style="color: var(--success); margin-right: 6px;"></i>${detection}</span>
+                        <span style="color: var(--text-tertiary);">${times[i]}</span>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+        
+        // Update every 5 seconds
+        setInterval(updateMonitor, 5000);
+        setInterval(updateDetections, 8000);
+    </script>
+</body>
+</html>

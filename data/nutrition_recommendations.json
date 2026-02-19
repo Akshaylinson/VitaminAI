@@ -1,0 +1,62 @@
+{
+  "Vitamin A": {
+    "foods": ["Carrots", "Sweet potatoes", "Spinach", "Liver", "Eggs", "Dairy products"],
+    "daily_requirement": "700-900 mcg",
+    "notes": "Important for vision, immune function, and skin health. Fat-soluble vitamin.",
+    "deficiency_symptoms": ["Night blindness", "Dry skin", "Frequent infections"]
+  },
+  "Vitamin C": {
+    "foods": ["Citrus fruits", "Strawberries", "Bell peppers", "Broccoli", "Tomatoes", "Kiwi"],
+    "daily_requirement": "65-90 mg",
+    "notes": "Essential for collagen synthesis, immune support, and iron absorption. Water-soluble vitamin.",
+    "deficiency_symptoms": ["Scurvy", "Bleeding gums", "Slow wound healing"]
+  },
+  "Vitamin D": {
+    "foods": ["Fatty fish", "Egg yolks", "Fortified milk", "Mushrooms", "Cod liver oil"],
+    "daily_requirement": "600-800 IU",
+    "notes": "Crucial for bone health and calcium absorption. Can be synthesized by skin from sunlight.",
+    "deficiency_symptoms": ["Rickets", "Bone pain", "Muscle weakness"]
+  },
+  "Vitamin E": {
+    "foods": ["Nuts", "Seeds", "Vegetable oils", "Leafy greens", "Avocado"],
+    "daily_requirement": "15 mg",
+    "notes": "Antioxidant that protects cells from damage. Fat-soluble vitamin.",
+    "deficiency_symptoms": ["Muscle weakness", "Vision problems", "Immune dysfunction"]
+  },
+  "Vitamin B1": {
+    "foods": ["Whole grains", "Pork", "Legumes", "Nuts", "Seeds"],
+    "daily_requirement": "1.1-1.2 mg",
+    "notes": "Important for energy metabolism and nervous system function.",
+    "deficiency_symptoms": ["Beriberi", "Fatigue", "Nerve problems"]
+  },
+  "Vitamin B2": {
+    "foods": ["Dairy products", "Eggs", "Leafy greens", "Meat", "Almonds"],
+    "daily_requirement": "1.1-1.3 mg",
+    "notes": "Essential for energy production and cellular function.",
+    "deficiency_symptoms": ["Cracked lips", "Sore throat", "Skin disorders"]
+  },
+  "Vitamin B3": {
+    "foods": ["Meat", "Fish", "Mushrooms", "Peanuts", "Whole grains"],
+    "daily_requirement": "14-16 mg",
+    "notes": "Essential for cellular energy production and DNA repair.",
+    "deficiency_symptoms": ["Pellagra", "Digestive problems", "Skin issues"]
+  },
+  "Vitamin B12": {
+    "foods": ["Meat", "Fish", "Dairy products", "Eggs", "Fortified cereals"],
+    "daily_requirement": "2.4 mcg",
+    "notes": "Critical for nerve function and red blood cell formation.",
+    "deficiency_symptoms": ["Anemia", "Fatigue", "Nerve damage"]
+  },
+  "Biotin": {
+    "foods": ["Eggs", "Nuts", "Seeds", "Sweet potatoes", "Spinach"],
+    "daily_requirement": "30 mcg",
+    "notes": "Important for metabolism and gene regulation.",
+    "deficiency_symptoms": ["Hair loss", "Skin rash", "Brittle nails"]
+  },
+  "Iron": {
+    "foods": ["Red meat", "Spinach", "Lentils", "Tofu", "Dark chocolate"],
+    "daily_requirement": "8-18 mg",
+    "notes": "Essential for oxygen transport and energy production.",
+    "deficiency_symptoms": ["Anemia", "Fatigue", "Pale skin"]
+  }
+}

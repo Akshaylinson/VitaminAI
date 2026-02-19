@@ -1,0 +1,121 @@
+disease_name,vitamin,association_strength,confidence_note,source_type
+rickets,Vitamin D,high,Classical disease caused by Vitamin D deficiency,medical_textbook
+osteomalacia,Vitamin D,high,Strongly linked to prolonged Vitamin D deficiency,medical_textbook
+xerophthalmia,Vitamin A,high,Characteristic eye condition caused by Vitamin A deficiency,medical_textbook
+night_blindness,Vitamin A,high,Early symptom of Vitamin A deficiency,medical_textbook
+dry_eyes,Vitamin A,medium,May be associated with Vitamin A deficiency,clinical_observation
+angular_cheilitis,Vitamin B2,high,Commonly associated with riboflavin deficiency,medical_textbook
+angular_cheilitis,Vitamin B12,medium,May occur in Vitamin B12 deficiency,clinical_observation
+cheilitis,Vitamin B2,medium,Often linked to B-complex deficiencies,clinical_observation
+cheilitis,Vitamin B6,low,Possible association in some cases,clinical_observation
+dermatitis,Vitamin B3,high,Characteristic feature of pellagra (niacin deficiency),medical_textbook
+dermatitis,Vitamin B6,medium,Can be associated with Vitamin B6 deficiency,clinical_observation
+dermatitis,Vitamin A,medium,Skin inflammation may relate to Vitamin A deficiency,clinical_observation
+eczema,Vitamin E,low,Possible association due to antioxidant deficiency,clinical_observation
+eczema,Vitamin D,medium,Vitamin D deficiency linked to eczema flare-ups,clinical_observation
+scurvy,Vitamin C,high,Classic manifestation of Vitamin C deficiency,medical_textbook
+bleeding_gums,Vitamin C,high,Strong indicator of Vitamin C deficiency,medical_textbook
+poor_wound_healing,Vitamin C,medium,Vitamin C plays a role in tissue repair,clinical_observation
+hyperkeratosis,Vitamin A,medium,May occur in Vitamin A deficiency,clinical_observation
+skin_dryness,Vitamin A,low,Possible association with Vitamin A deficiency,clinical_observation
+skin_dryness,Vitamin E,low,May be linked to reduced antioxidant protection,clinical_observation
+beriberi,Vitamin B1,high,Classical disease caused by thiamine deficiency,medical_textbook
+pellagra,Vitamin B3,high,Classical disease caused by niacin deficiency,medical_textbook
+glossitis,Vitamin B2,high,Tongue inflammation associated with riboflavin deficiency,medical_textbook
+glossitis,Vitamin B12,high,Common in Vitamin B12 deficiency,medical_textbook
+glossitis,Vitamin B3,medium,May occur in niacin deficiency,clinical_observation
+stomatitis,Vitamin B2,medium,Mouth inflammation linked to B-vitamin deficiencies,clinical_observation
+stomatitis,Vitamin B12,medium,Can occur in Vitamin B12 deficiency,clinical_observation
+hair_loss,Biotin,medium,Biotin deficiency can cause hair problems,clinical_observation
+hair_loss,Iron,medium,Iron deficiency commonly causes hair loss,clinical_observation
+hair_loss,Vitamin D,low,Low vitamin D may affect hair follicle health,clinical_observation
+brittle_nails,Biotin,medium,Biotin deficiency affects nail health,clinical_observation
+brittle_nails,Iron,medium,Iron deficiency causes brittle nails,clinical_observation
+muscle_weakness,Vitamin D,medium,Vitamin D deficiency affects muscle function,clinical_observation
+muscle_weakness,Vitamin B1,medium,Thiamine deficiency causes muscle weakness,clinical_observation
+muscle_cramps,Vitamin D,low,May be associated with low vitamin D,clinical_observation
+muscle_cramps,Magnesium,medium,Magnesium deficiency commonly causes cramps,clinical_observation
+fatigue,Vitamin B12,high,B12 deficiency commonly causes severe fatigue,medical_textbook
+fatigue,Iron,high,Iron deficiency anemia causes fatigue,medical_textbook
+fatigue,Vitamin D,medium,Low vitamin D associated with tiredness,clinical_observation
+fatigue,Vitamin B1,medium,Thiamine deficiency causes fatigue,clinical_observation
+pale_skin,Iron,high,Classic sign of iron deficiency anemia,medical_textbook
+pale_skin,Vitamin B12,high,B12 deficiency causes paleness,medical_textbook
+pale_skin,Folate,medium,Folate deficiency can cause anemia and paleness,clinical_observation
+psoriasis,Vitamin D,medium,Vitamin D crucial for skin cell regulation,clinical_observation
+psoriasis,Vitamin A,low,Retinoids may help manage psoriasis symptoms,clinical_observation
+acne,Vitamin A,medium,Vitamin A regulates sebum production,clinical_observation
+acne,Zinc,medium,Zinc has anti-inflammatory properties for acne,clinical_observation
+rosacea,Vitamin B3,medium,Niacin helps reduce rosacea inflammation,clinical_observation
+rosacea,Vitamin B2,low,Riboflavin deficiency may trigger rosacea,clinical_observation
+vitiligo,Vitamin B12,low,B12 deficiency may contribute to vitiligo,clinical_observation
+vitiligo,Vitamin D,low,Vitamin D important for melanocyte function,clinical_observation
+cracked_lips,Vitamin B2,high,Riboflavin deficiency commonly causes lip cracks,medical_textbook
+cracked_lips,Iron,medium,Iron deficiency can cause angular lip cracks,clinical_observation
+cracked_lips,Vitamin B3,low,Niacin deficiency may cause lip problems,clinical_observation
+peripheral_neuropathy,Vitamin B12,high,B12 deficiency causes nerve damage,medical_textbook
+peripheral_neuropathy,Vitamin B1,high,Thiamine deficiency affects peripheral nerves,medical_textbook
+peripheral_neuropathy,Vitamin B6,medium,Excess or deficiency can cause neuropathy,clinical_observation
+anemia,Iron,high,Iron deficiency is primary cause of anemia,medical_textbook
+anemia,Vitamin B12,high,B12 deficiency causes megaloblastic anemia,medical_textbook
+anemia,Folate,high,Folate deficiency causes megaloblastic anemia,medical_textbook
+bone_pain,Vitamin D,high,Vitamin D deficiency causes bone pain,medical_textbook
+bone_pain,Calcium,medium,Calcium deficiency affects bone health,clinical_observation
+joint_pain,Vitamin D,medium,Low vitamin D associated with joint pain,clinical_observation
+joint_pain,Vitamin C,low,Scurvy can cause joint pain,clinical_observation
+easy_bruising,Vitamin C,high,Vitamin C deficiency causes easy bruising,medical_textbook
+easy_bruising,Vitamin K,high,Vitamin K deficiency affects blood clotting,medical_textbook
+petechiae,Vitamin C,high,Small skin hemorrhages in scurvy,medical_textbook
+petechiae,Vitamin K,medium,May occur in Vitamin K deficiency,clinical_observation
+seborrheic_dermatitis,Biotin,medium,Biotin deficiency can cause seborrheic dermatitis,clinical_observation
+seborrheic_dermatitis,Vitamin B6,low,May be associated with B6 deficiency,clinical_observation
+follicular_hyperkeratosis,Vitamin A,high,Characteristic sign of Vitamin A deficiency,medical_textbook
+follicular_hyperkeratosis,Vitamin C,medium,Can occur in scurvy,clinical_observation
+koilonychia,Iron,high,Spoon-shaped nails indicate iron deficiency,medical_textbook
+restless_leg_syndrome,Iron,medium,Iron deficiency commonly associated with RLS,clinical_observation
+restless_leg_syndrome,Folate,low,Folate deficiency may contribute to RLS,clinical_observation
+cognitive_impairment,Vitamin B12,high,B12 deficiency affects cognitive function,medical_textbook
+cognitive_impairment,Vitamin B1,high,Thiamine deficiency causes cognitive issues,medical_textbook
+cognitive_impairment,Iron,medium,Iron deficiency affects concentration,clinical_observation
+depression,Vitamin D,medium,Low vitamin D linked to depression,clinical_observation
+depression,Vitamin B12,medium,B12 deficiency can cause mood changes,clinical_observation
+depression,Folate,medium,Folate deficiency associated with depression,clinical_observation
+irritability,Vitamin B6,medium,B6 deficiency can cause irritability,clinical_observation
+irritability,Iron,medium,Iron deficiency affects mood,clinical_observation
+numbness_tingling,Vitamin B12,high,B12 deficiency causes paresthesia,medical_textbook
+numbness_tingling,Vitamin B1,medium,Thiamine deficiency affects nerve sensation,clinical_observation
+numbness_tingling,Vitamin B6,medium,B6 deficiency can cause tingling,clinical_observation
+vision_problems,Vitamin A,high,Vitamin A essential for vision,medical_textbook
+vision_problems,Vitamin B12,medium,B12 deficiency can affect optic nerve,clinical_observation
+immune_dysfunction,Vitamin D,medium,Vitamin D crucial for immune function,clinical_observation
+immune_dysfunction,Vitamin C,medium,Vitamin C supports immune system,clinical_observation
+immune_dysfunction,Vitamin A,medium,Vitamin A important for immune health,clinical_observation
+frequent_infections,Vitamin D,medium,Low vitamin D increases infection risk,clinical_observation
+frequent_infections,Vitamin C,medium,Vitamin C deficiency weakens immunity,clinical_observation
+frequent_infections,Vitamin A,medium,Vitamin A deficiency affects immune response,clinical_observation
+slow_growth,Vitamin D,high,Vitamin D essential for childhood growth,medical_textbook
+slow_growth,Vitamin A,medium,Vitamin A important for growth and development,clinical_observation
+delayed_wound_healing,Vitamin C,high,Vitamin C essential for collagen synthesis,medical_textbook
+delayed_wound_healing,Zinc,medium,Zinc important for wound healing,clinical_observation
+taste_abnormalities,Zinc,medium,Zinc deficiency affects taste perception,clinical_observation
+taste_abnormalities,Vitamin B12,low,B12 deficiency may alter taste,clinical_observation
+confusion,Vitamin B1,high,Thiamine deficiency causes confusion and memory loss,medical_textbook
+confusion,Vitamin B12,high,B12 deficiency leads to mental confusion,medical_textbook
+ataxia,Vitamin B1,high,Thiamine deficiency causes coordination problems,medical_textbook
+ataxia,Vitamin B12,medium,B12 deficiency can affect balance,clinical_observation
+ataxia,Vitamin E,medium,Vitamin E deficiency may cause ataxia,clinical_observation
+convulsions,Vitamin B6,high,Severe B6 deficiency can cause seizures,medical_textbook
+convulsions,Magnesium,medium,Magnesium deficiency may trigger seizures,clinical_observation
+photophobia,Vitamin B2,medium,Riboflavin deficiency causes light sensitivity,clinical_observation
+photophobia,Vitamin A,low,Vitamin A deficiency may increase light sensitivity,clinical_observation
+corneal_vascularization,Vitamin B2,high,Riboflavin deficiency causes blood vessels in cornea,medical_textbook
+bitot_spots,Vitamin A,high,White foamy spots on eyes indicate Vitamin A deficiency,medical_textbook
+keratomalacia,Vitamin A,high,Corneal softening due to severe Vitamin A deficiency,medical_textbook
+optic_neuropathy,Vitamin B12,high,B12 deficiency can damage optic nerve,medical_textbook
+optic_neuropathy,Vitamin B1,medium,Thiamine deficiency may affect vision,clinical_observation
+melanoma,Vitamin D,medium,Low vitamin D levels associated with increased melanoma risk,clinical_observation
+melanoma,Vitamin E,low,Antioxidant properties may offer protective effects against skin damage,clinical_observation
+melanoma,Vitamin A,low,Retinoids may play role in skin cancer prevention,clinical_observation
+melanoma,Vitamin C,low,Antioxidant support for skin health and UV damage protection,clinical_observation
+basal_cell_carcinoma,Vitamin D,medium,Low vitamin D associated with increased skin cancer risk,clinical_observation
+basal_cell_carcinoma,Vitamin E,low,Antioxidant properties may help protect against UV-induced skin damage,clinical_observation
